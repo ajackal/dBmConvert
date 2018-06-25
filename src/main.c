@@ -17,25 +17,27 @@ double WattdBmConversion(double value)
 int main(int argc, char *argv[])
 {
 	int version;
+	char input[256];
 	double value;
 	double result;
 
-	/*printf("Enter '0' for dBm->Watt coversion.\n");
+	printf("Enter '0' for dBm->Watt coversion.\n");
 	printf("Enter '1' for Watt->dBm conversion.\n");
 	scanf("%d", &version);
+	printf("%d\n", version);
 
 	printf("Enter the value you want to convert:\n");
 	while (1)
 	{
 		fgets (input, 256, stdin);
-		sscanf (input, "%f", &value);
+		if (sscanf (input, "%f", &value) == 1) break;
 	}
-	printf("%d\n", value);*/
-	version = (int)argv[1]
-	if (argv[1] == 0)
-		result = dBmWattCoversion(argv[2]);
-	else if (argv[1] == 1)
-		result = WattdBmConversion(argv[2]);
+	printf("%d\n", value);
+	
+	if (version == 0)
+		result = dBmWattCoversion(value);
+	else if (version == 1)
+		result = WattdBmConversion(value);
 	else
 		printf("Invalid conversion type!\n");
 
