@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-double dBmWattCoversion(double value)
+double dBmWattCoversion(int value)
 {
 	double exponent = value / 10;
 	double milliwatts = pow(10.0, exponent);
@@ -9,7 +9,7 @@ double dBmWattCoversion(double value)
 	return watts;
 }
 
-double WattdBmConversion(double value)
+double WattdBmConversion(int value)
 {
 	return 10*log(1000*value);
 }
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 {
 	int version;
 	char input[256];
-	double value;
+	int value;
 	double result;
 
 	printf("Enter '0' for dBm->Watt coversion.\n");
