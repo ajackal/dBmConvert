@@ -27,11 +27,12 @@ int main(int argc, char *argv[])
 	printf("%d\n", version);
 
 	printf("Enter the value you want to convert:\n");
-	while (1)
+	/*while (1)
 	{
 		fgets (input, 256, stdin);
 		if (sscanf (input, "%f", &value) == 1) break;
-	}
+	}*/
+	scanf("%d", &value);
 	printf("%d\n", value);
 	
 	if (version == 0)
