@@ -36,5 +36,5 @@ int main(int argc, char *argv[])
 	else
 		printf("Invalid conversion type!\n");
 
-	printf("The answer is: %f\n", result);
+	printf("The answer is: %0.2f\n", result);
 }
