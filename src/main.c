@@ -1,33 +1,33 @@
 #include <stdio.h>
 #include <math.h>
 
-double dBmWattCoversion(int value)
+float dBmWattCoversion(float value)
 {
-	double exponent = (double)value / 10;
-	double milliwatts = pow(10.0, exponent);
-	double watts = milliwatts / 1000;
+	float exponent = value / 10;
+	float milliwatts = pow(10.0, exponent);
+	float watts = milliwatts / 1000;
 	return watts;
 }
 
-double WattdBmConversion(int value)
+float WattdBmConversion(float value)
 {
-	double log_value = log10(1000 * (double)value);
-	double dBm = 10 * log_value;
+	float log_value = log10(1000 * value);
+	float dBm = 10 * log_value;
 	return dBm;
 }
 
 int main(int argc, char *argv[])
 {
 	int version;
-	int value;
-	double result;
+	float value;
+	float result;
 
 	printf("Enter '0' for dBm->Watt coversion.\n");
 	printf("Enter '1' for Watt->dBm conversion.\n");
 	scanf("%d", &version);
 
 	printf("Enter the value you want to convert:\n");
-	scanf("%d", &value);
+	scanf("%f", &value);
 	
 	if (version == 0)
 		result = dBmWattCoversion(value);
